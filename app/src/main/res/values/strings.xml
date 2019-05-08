@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">SQLiteApp</string>
+    <string name="app_name">a18eliek - assignment 5</string>
+    <string name="refresh">Fetch mountains</string>
+    <string name="drop_db">Drop database</string>
+    <string name="title_activity_mountain_details">MountainDetailsActivity</string>
+    <string name="spinner_title">Spinner</string>
+    <string name="sort_prompt">Sort</string>
+
+    <string-array name="sort_arrays">
+        <item>Name A-Z</item>
+        <item>Name Z-A</item>
+        <item>Height Highest-Lowest</item>
+        <item>Height Lowest-Highest</item>
+    </string-array>
+
 </resources>
