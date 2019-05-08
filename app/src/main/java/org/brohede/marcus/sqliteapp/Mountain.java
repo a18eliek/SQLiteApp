@@ -1,16 +1,63 @@
 package org.brohede.marcus.sqliteapp;
 
-/**
- * Created by marcus on 2018-04-25.
- */
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class Mountain {
+    //Member variabels
+    private String name;
+    private String location;
+    private int height;
+    private String auxdata;
 
-    // You need to create proper member variables, methods, and constructors
+    //Constructor(s)
+    public Mountain(String inName, String inLocation, int inHeight, String inAuxdata) {
+        name = inName;
+        location = inLocation;
+        height = inHeight;
+        auxdata = inAuxdata;
+    }
 
-    // These member variables should be used
-    // location
-    // height
-    // img_url
-    // info_url
+    public Mountain(int orThrow, int indexOrThrow, int columnIndexOrThrow, String inName) {
+        name = inName;
+        location = "";
+        height = -1;
+    }
+
+    //Member methods
+    public String toString() {
+        return name;
+    }
+
+    public String info() {
+        String str = name;
+        str += " is located in ";
+        str += location;
+        str += " and has an height of ";
+        str += Integer.toString(height);
+        str += "m. ";
+        return str;
+    }
+
+    public void setHeight(int newHeight) {
+        height = newHeight;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getHeight() {
+        return String.valueOf(height);
+    }
+
+    public String getAuxdata() {
+        return auxdata;
+    }
+
+    public static String splitAuxdata(String auxdata, String value) throws JSONException {
+        JSONObject json = new JSONObject(auxdata);
+        return json.getString(value);
+    }
+
 }
